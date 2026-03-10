@@ -1,0 +1,61 @@
+@use '../abstract/mixin' as mx;
+
+.main-page {
+    position: relative;
+    height: 100vh;
+    background-color: #303131;
+    flex-direction: column;
+    @include mx.flex-center();
+}
+
+.headline {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 85px;
+    z-index: 10;
+    color: #FFFFFF;
+
+    >h1 {
+        font-size: 140px;
+        font-weight: bold;
+    }
+
+    >h3 {
+        font-size: 48px;
+        text-align: start;
+    }
+}
+
+.main-start-button {
+    background-color: #F0EA6E;
+    border: none;
+    font-size: 40px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 98px;
+    width: 250px;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+
+        >.controller-icon-button {
+            content: url('/public/assets/icons/controller-icon-main-hover.svg');
+        }
+
+        >.arrow-icon-button {
+            content: url('/public/assets/icons/arrow-main-hover.svg');
+        }
+    }
+}
+
+.main-background-icon {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}

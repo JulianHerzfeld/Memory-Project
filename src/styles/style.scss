@@ -1,0 +1,12 @@
+@use './components/main';
+
+@font-face {
+    font-family: red-rose;
+    src: url('public/assets/fonts/RedRose-VariableFont_wght.ttf') format('truetype');
+}
+
+*{
+    font-family: red-rose;
+    margin: 0;
+    box-sizing: border-box;
+}
