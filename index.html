@@ -9,15 +9,83 @@
 
 <body>
 
-    <div class="main-page">
+    <!-- <div id="app"></div> -->
+
+    <div class="settings-wrapper">
+        <header>
+            <h1>Settings</h1>
+            <img src="public/assets/icons/line-settings-headline.svg" alt="headline underscore">
+        </header>
+        <div class="settings-content">
+            <div>
+                <form>
+                    <div>
+                        <h2><img src="public/assets/icons/setting-theme-icon.svg" alt="settings theme icon"> Game themes
+                        </h2>
+
+                        <input type="radio" id="set-code-theme" name="theme" checked value="">
+                        <label for="set-code-theme">Code vibes theme</label><br>
+
+                        <input type="radio" id="set-game-theme" name="theme" value="">
+                        <label for="set-game-theme">Gaming theme</label><br>
+
+                        <input type="radio" id="set-food-theme" name="theme" value="">
+                        <label for="set-food-theme">Foods theme</label>
+                    </div>
+                    <div>
+                        <h2><img src="public/assets/icons/settings-player-icon.svg" alt="settings player icon"> Game
+                            themes
+                        </h2>
+
+                        <input type="radio" id="set-player-blue" name="player" checked value="">
+                        <label for="set-player-blue">Blue</label><br>
+
+                        <input type="radio" id="set-player-orange" name="player" value="">
+                        <label for="set-player-orange">Orange</label>
+                    </div>
+                    <div>
+                        <h2><img src="public/assets/icons/settings-board-icon.svg" alt="settings board icon"> Board size
+                        </h2>
+
+                        <input type="radio" id="set-bord-16" name="board" checked value="">
+                        <label for="set-bord-16">16 cards</label><br>
+
+                        <input type="radio" id="set-board-24" name="board" value="">
+                        <label for="set-board-24">24 cards</label><br>
+
+                        <input type="radio" id="set-board-36" name="board" value="">
+                        <label for="set-board-36">36 cards</label>
+                    </div>
+                </form>
+            </div>
+            <div class="settings-preview">
+                <section class="settings-preview__img">
+                    <img src="public/assets/img/code-theme-img/code-theme-preview.svg" alt="theme img">
+                </section>
+                <section>
+                    <div class="selected-settings">
+                        <p>Game theme</p>
+                        <img src="public/assets/icons/settings-separating-line.svg" alt="seperating line">
+                        <p>Player</p>
+                        <img src="public/assets/icons/settings-separating-line.svg" alt="seperating line">
+                        <p>Board Size</p>
+                        <button><img src="public/assets/icons/settings-start-icon.svg"
+                                alt="start button icon">Start</button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="main-page">
         <div class="headline">
             <h3>It's play time.</h3>
             <h1>Ready to play?</h1>
         </div>
-        <button class="main-start-button"><img class="controller-icon-button" src="public/assets/icons/controller-icon-main.svg"
+        <button onclick="renderSettings()" class="main-start-button"><img class="controller-icon-button" src="public/assets/icons/controller-icon-main.svg"
                 alt="controller icon">Play <img class="arrow-icon-button" src="public/assets/icons/arrow-main.svg" alt="arrow right"></button>
         <img class="main-background-icon" src="public/assets/icons/background-icon-main.svg" alt="controller background icon">
-    </div>
+    </div> -->
     <script type="module" src="/src/main.ts"></script>
 </body>
 
