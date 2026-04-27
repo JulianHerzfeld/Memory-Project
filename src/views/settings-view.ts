@@ -12,6 +12,23 @@ const selectedTheme = document.querySelector<HTMLDivElement>('.selected-theme');
 const startButton = document.querySelector<HTMLButtonElement>('.selected-settings button');
 const radios = document.querySelectorAll<HTMLInputElement>('input[type="radio"]');
 
+const themeLabels: Record<string, string> = {
+    code: "Code theme",
+    game: "Game theme",
+    food: "Food theme"
+};
+
+const playerLabels: Record<string, string> = {
+    blue: "Blue",
+    orange: "Orange"
+};
+
+const cardLabels: Record<string, string> = {
+    16: "16 Cards",
+    24: "24 Cards",
+    36: "36 Cards"
+};
+
 
 function getSelectedValue(name:string): string {
     const checked = document.querySelector(`input[name="${name}"]:checked`) as HTMLInputElement;
@@ -25,9 +42,9 @@ function updatePreview() {
     const board = getSelectedValue("board");
 
     if (selectedTheme && selectedPlayer && selectedBoard) {
-        selectedTheme.textContent = theme + " theme";
-        selectedPlayer.textContent = player;
-        selectedBoard.textContent = board;
+        selectedTheme.textContent = themeLabels[theme];
+        selectedPlayer.textContent = playerLabels[player];
+        selectedBoard.textContent = cardLabels[board];
     }
 
     updateThemeImg(theme);
@@ -54,8 +71,8 @@ startButton?.addEventListener("click", () => {
     const board = getSelectedValue("board");
 
     sessionStorage.setItem("theme", theme);
-    sessionStorage.setItem("theme", player);
-    sessionStorage.setItem("theme", board);
+    sessionStorage.setItem("player", player);
+    sessionStorage.setItem("board", board);
 
-    window.location.href = "";              //game.html
+    window.location.href = "game.html";              //game.html
 })

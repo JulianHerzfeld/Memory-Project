@@ -5,8 +5,33 @@
     src: url('public/assets/fonts/RedRose-VariableFont_wght.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: orbitron;
+    src: url('public/assets/fonts/Orbitron-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: klee-one;
+    src: url('public/assets/fonts/KleeOne-Regular.ttf') format('truetype');
+}
+
 *{
-    font-family: red-rose;
     margin: 0;
     box-sizing: border-box;
+}
+
+body {
+    font-family: red-rose;
+}
+
+body[data-theme="code"] {
+    font-family: red-rose;
+}
+
+body[data-theme="game"] {
+    font-family: orbitron;
+}
+
+body[data-theme="food"] {
+    font-family: klee-one;
 }
