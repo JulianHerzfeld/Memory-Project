@@ -187,3 +187,35 @@ dialog.closing {
         transform: translate(-50%, -200%);
     }
 }
+
+#card-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    height: 120px;
+    aspect-ratio: 1 / 1;
+
+    &__inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: all 300ms ease-in-out;
+    }
+
+    &__front {
+        position: absolute;
+        inset: 0;
+        backface-visibility: hidden;
+
+        &--back {
+            transform: rotateY(180deg);
+        }
+    }
+
+    &.flipped .card__inner {
+        transform: rotateY(180deg);
+    }
+}

@@ -2,9 +2,11 @@ import { Card, CardData } from "../models/card";
 
 export class Board {
     container: HTMLElement;
+    frontImg: string;
 
-    constructor(container: HTMLElement) {
+    constructor(container: HTMLElement, frontImg: string) {
         this.container = container;
+        this.frontImg = frontImg;
     }
 
     init(cards: CardData[]) {
@@ -12,7 +14,7 @@ export class Board {
         const shuffled = this.shuffle(doubled);
 
         shuffled.forEach(data => {
-            const card = new Card(data);
+            const card = new Card(data, this.frontImg);
             this.container.appendChild(card.element);
         });
     }
