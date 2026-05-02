@@ -1,0 +1,49 @@
+.result-container {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.winner {
+    margin-top: 40px;
+    opacity: 0;
+    transform: translateY(-100px);
+    transition: all 0.6s ease;
+}
+
+.winner.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 999;
+    transform: translateY(-100%);
+    opacity: 0;
+
+    transition: transform 0.6s ease;
+}
+
+.overlay-content {
+    text-align: center;
+    color: white;
+    transform: translateY(-100px);
+    transition: all 0.6s ease;
+}
+
+.overlay.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}

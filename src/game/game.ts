@@ -32,8 +32,12 @@ export class Game {
             }
         };
 
+    private matchedPairs = 0;
+    private totalPairs: number;
 
-    constructor(private container: HTMLElement) {
+
+    constructor(private container: HTMLElement, totalPairs: number) {
+        this.totalPairs = totalPairs;
         this.setCurrentPlayer();
         this.updatePlayerUI();
         this.container.addEventListener("cardClicked", (e: any) => {
@@ -69,13 +73,13 @@ export class Game {
 
     checkMatch() {
         if (!this.firstCard || !this.secondCard) return;
-
         if (this.firstCard.data.id === this.secondCard.data.id) {
             this.firstCard.setMatched();
             this.secondCard.setMatched();
-
+            this.matchedPairs++;
             this.scores[this.currentPlayer - 1]++;
             this.updateScoreUI();
+            this.checkGameEnd();
             this.resetTurn();
         } else {
             setTimeout(() => {
@@ -87,10 +91,21 @@ export class Game {
         }
     }
 
+    checkGameEnd() {
+        if (this.matchedPairs === this.totalPairs) {
+            sessionStorage.setItem("score1", this.scores[0].toString());
+            sessionStorage.setItem("score2", this.scores[1].toString());
+
+            window.location.href = "/memory-project/endscreen.html";
+        }
+    }
+
     resetTurn() {
         this.firstCard = null;
         this.secondCard = null;
         this.lockBoard = false;
+        console.log(this.scores);
+        
     }
 
     switchPlayer() {

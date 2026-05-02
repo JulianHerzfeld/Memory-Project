@@ -40,7 +40,7 @@ function renderCards() {
     const pairsToUse = Math.min(neededPairs, maxPairs);
     const selectedCards: CardData[] = themes[theme].cards.slice(0, pairsToUse);
     const board = new Board(container, themes[theme].frontImg);
-    const game = new Game(container);
+    const game = new Game(container, pairsToUse);
     board.init(selectedCards);
 }
 
