@@ -1,17 +1,36 @@
 <body>
     <div class="result-container">
 
-        <h1>Game Result</h1>
-
-        <div class="scores">
-            <p>Player 1: <span id="score1"></span></p>
-            <p>Player 2: <span id="score2"></span></p>
+        <div class="endscreen-header-img">
+            <img id="game-over-img" src="public/assets/img/code-theme-img/code-theme-game-over.svg" alt="">
         </div>
+        <h1 class="score-headline">Final Score</h1>
 
+
+        <div class="player-points endscreen-points">
+            <div class="player-1">
+                <img id="player-1" src="public/assets/icons/label.svg" alt="blue label">
+                <p class="code-theme-player">Blue</p>
+                <p id="score1">0</p>
+            </div>
+            <div class="player-2">
+                <img id="player-2" src="public/assets/icons/label (1).svg" alt="orange label">
+                <p class="code-theme-player">Orange</p>
+                <p id="score2">0</p>
+            </div>
+        </div>
         <div id="game-over-overlay" class="overlay hidden">
             <div class="overlay-content">
-                <h2 id="winner-text"></h2>
-                <button id="back-to-menu">Back to Menu</button>
+                <div class="confetti-game-theme">
+                    <img src="public/assets/img/code-theme-img/code-theme-confetti.svg" alt="">
+                </div>
+                <div>
+                    <p>The winner is</p>
+                    <h2 id="winner-text"></h2>
+                    <img id="winner-icon" src="public/assets/icons/chess_pawn (1).svg" alt="">
+                    <button id="back-to-menu">Back to Menu</button>
+                </div>
+
             </div>
         </div>
 

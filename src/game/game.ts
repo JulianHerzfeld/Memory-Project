@@ -23,12 +23,12 @@ export class Game {
                 p2: "public/assets/icons/label (1).svg"
             },
             game: {
-                p1: "public/assets/icons/chess_pawn.svg",
-                p2: "public/assets/icons/chess_pawn (1).svg"
+                p1: "public/assets/icons/chess_pawn_curr_orange.svg",
+                p2: "public/assets/icons/chess_pawn__curr_blue.svg"
             },
             food: {
-                p1: "public/assets/icons/chess_pawn.svg",
-                p2: "public/assets/icons/chess_pawn (1).svg"
+                p1: "public/assets/icons/chess_pawn_curr_orange.svg",
+                p2: "public/assets/icons/chess_pawn__curr_blue.svg"
             }
         };
 
@@ -79,6 +79,7 @@ export class Game {
             this.matchedPairs++;
             this.scores[this.currentPlayer - 1]++;
             this.updateScoreUI();
+            
             this.checkGameEnd();
             this.resetTurn();
         } else {
@@ -96,7 +97,10 @@ export class Game {
             sessionStorage.setItem("score1", this.scores[0].toString());
             sessionStorage.setItem("score2", this.scores[1].toString());
 
-            window.location.href = "/memory-project/endscreen.html";
+            setTimeout(() => {
+                window.location.href = "/memory-project/endscreen.html";
+            }, 2500);
+
         }
     }
 
@@ -104,8 +108,6 @@ export class Game {
         this.firstCard = null;
         this.secondCard = null;
         this.lockBoard = false;
-        console.log(this.scores);
-        
     }
 
     switchPlayer() {

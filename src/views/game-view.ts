@@ -45,9 +45,9 @@ function renderCards() {
 }
 
 
-type Theme = "code" | "game" | "food";
+export type Theme = "code" | "game" | "food";
 
-const themeAssets: Record<Theme, {
+export const themeAssets: Record<Theme, {
     player1: string;
     player2: string;
     currentPlayer: string;

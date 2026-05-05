@@ -1,6 +1,33 @@
 .result-container {
     text-align: center;
-    margin-top: 100px;
+    // margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    >div {
+        display: flex;
+
+        >div {
+            display: flex;
+        }
+    }
+}
+
+.endscreen-header-img {
+    margin-bottom: 124px;
+}
+
+.score-headline {
+    color: #FFFFFF;
+    font-size: var(--score-hl-font-size);
+    margin-bottom: 24px;
+}
+
+.endscreen-points {
+    height: 62px;
 }
 
 .winner {
@@ -41,6 +68,22 @@
 .overlay.show {
     transform: translateY(0);
     opacity: 1;
+}
+
+.confetti-game-theme {
+    display: var(--confetti);
+}
+
+.winner-b {
+  color: var(--win-b);
+}
+
+.winner-o {
+  color: var(--win-o);
+}
+
+.draw {
+  color: gray;
 }
 
 .hidden {

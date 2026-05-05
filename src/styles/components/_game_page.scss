@@ -17,6 +17,10 @@ body[data-theme="code"] {
     --btn-hover-b: 2px solid #4DD5BC;
     --btn-hover-s: 2px 2px 8px 0px rgba(77, 213, 188, 1);
     --code-theme-p: block;
+    --score-hl-font-size: 26px;
+    --win-b: #2BB1FF;
+    --win-o: #F58E39;
+    --confetti: block;
 }
 
 body[data-theme="game"] {
@@ -30,7 +34,9 @@ body[data-theme="game"] {
     --current-player-gap: 18px;
     --points-bg: #FFFFFF;
     --code-theme-p: none;
-
+    --win-b: #2298DB;
+    --win-o: #EA6900;
+    --confetti: none;
 }
 
 body[data-theme="food"] {
@@ -44,7 +50,9 @@ body[data-theme="food"] {
     --current-player-gap: 18px;
     --points-bg: #FFFFFF;
     --code-theme-p: none;
-
+    --win-b: #A45212;
+    --win-o: #A45212;
+    --confetti: none;
 }
 
 body {
