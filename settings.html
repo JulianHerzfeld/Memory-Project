@@ -12,62 +12,78 @@
     <div class="settings-wrapper">
         <header class="settings-header">
             <h1>Settings</h1>
-            <img src="public/assets/icons/line-settings-headline.svg" alt="headline underscore">
+            <img src="/assets/icons/line-settings-headline.svg" alt="headline underscore">
         </header>
         <div class="settings-content">
             <div>
                 <form>
-                    <div>
-                        <h2><img src="public/assets/icons/setting-theme-icon.svg" alt="settings theme icon"> Game themes
+                    <div class="single-settings-section">
+                        <h2><img src="/assets/icons/setting-theme-icon.svg" alt="settings theme icon"> Game themes
                         </h2>
 
-                        <input type="radio" id="set-code-theme" name="theme" checked value="code">
-                        <label for="set-code-theme">Code vibes theme</label><br>
+                        <div class="radio-wrapper">
+                            <input type="radio" id="set-code-theme" name="theme" checked value="code">
+                            <label for="set-code-theme">Code vibes theme</label>
+                        </div>
+                        <div class="radio-wrapper">
+                            <input type="radio" id="set-game-theme" name="theme" value="game">
+                            <label for="set-game-theme">Gaming theme</label>
+                        </div>
+                        <div class="radio-wrapper">
+                            <input type="radio" id="set-food-theme" name="theme" value="food">
+                            <label for="set-food-theme">Foods theme</label>
+                        </div>
 
-                        <input type="radio" id="set-game-theme" name="theme" value="game">
-                        <label for="set-game-theme">Gaming theme</label><br>
-
-                        <input type="radio" id="set-food-theme" name="theme" value="food">
-                        <label for="set-food-theme">Foods theme</label>
                     </div>
-                    <div>
-                        <h2><img src="public/assets/icons/settings-player-icon.svg" alt="settings player icon"> Player
+                    <div class="single-settings-section">
+                        <h2><img class="settings-player-icon" src="/assets/icons/settings-player-icon.svg" alt="settings player icon"> Choose player
                         </h2>
 
-                        <input type="radio" id="set-player-blue" name="player" checked value="blue">
-                        <label for="set-player-blue">Blue</label><br>
+                        <div class="radio-wrapper">
+                            <input type="radio" id="set-player-blue" name="player" checked value="blue">
+                            <label for="set-player-blue">Blue</label>
+                        </div>
 
-                        <input type="radio" id="set-player-orange" name="player" value="orange">
-                        <label for="set-player-orange">Orange</label>
+                        <div class="radio-wrapper">
+                            <input type="radio" id="set-player-orange" name="player" value="orange">
+                            <label for="set-player-orange">Orange</label>
+                        </div>
+
                     </div>
-                    <div>
-                        <h2><img src="public/assets/icons/settings-board-icon.svg" alt="settings board icon"> Board size
+                    <div class="single-settings-section">
+                        <h2><img src="/assets/icons/settings-board-icon.svg" alt="settings board icon"> Board size
                         </h2>
 
-                        <input type="radio" id="set-board-16" name="board" checked value="16">
-                        <label for="set-board-16">16 cards</label><br>
+                        <div class="radio-wrapper">
+                            <input type="radio" id="set-board-16" name="board" checked value="16">
+                            <label for="set-board-16">16 cards</label>
+                        </div>
 
-                        <input type="radio" id="set-board-24" name="board" value="24">
-                        <label for="set-board-24">24 cards</label><br>
+                        <div class="radio-wrapper">
+                            <input type="radio" id="set-board-24" name="board" value="24">
+                            <label for="set-board-24">24 cards</label>
+                        </div>
 
-                        <input type="radio" id="set-board-36" name="board" value="36">
-                        <label for="set-board-36">36 cards</label>
+                        <div class="radio-wrapper">
+                            <input type="radio" id="set-board-36" name="board" value="36">
+                            <label for="set-board-36">36 cards</label>
+                        </div>
+
                     </div>
                 </form>
             </div>
             <div class="settings-preview">
                 <section class="settings-preview__img">
-                    <img src="public/assets/img/code-theme-img/code-theme-preview.svg" alt="theme img">
+                    <img src="/assets/img/code-theme-img/code-theme-preview.svg" alt="theme img">
                 </section>
                 <section>
                     <div id="selected-settings" class="selected-settings">
                         <p class="selected-theme">Code theme</p>
-                        <img src="public/assets/icons/settings-separating-line.svg" alt="seperating line">
+                        <img src="/assets/icons/settings-separating-line.svg" alt="seperating line">
                         <p class="selected-player">Player</p>
-                        <img src="public/assets/icons/settings-separating-line.svg" alt="seperating line">
+                        <img src="/assets/icons/settings-separating-line.svg" alt="seperating line">
                         <p class="selected-board">Board Size</p>
-                        <button><img src="public/assets/icons/settings-start-icon.svg"
-                                alt="start button icon">Start</button>
+                        <button class="settings-start-btn"><span class="start-icon"></span>Start</button>
                     </div>
                 </section>
             </div>

@@ -58,5 +58,6 @@ export class Card {
 
     setMatched() {
         this.isMatched = true;
+        this.element.classList.add("matched-card");
     }
 }

@@ -79,7 +79,6 @@ export class Game {
             this.matchedPairs++;
             this.scores[this.currentPlayer - 1]++;
             this.updateScoreUI();
-            
             this.checkGameEnd();
             this.resetTurn();
         } else {
@@ -99,7 +98,7 @@ export class Game {
 
             setTimeout(() => {
                 window.location.href = "/memory-project/endscreen.html";
-            }, 2500);
+            }, 2000);
 
         }
     }

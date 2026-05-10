@@ -59,34 +59,77 @@
 }
 
 .overlay-content {
+    flex-direction: column;
     text-align: center;
     color: white;
     transform: translateY(-100px);
     transition: all 0.6s ease;
 }
 
+.overlay-winner-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    >img {
+        margin-top: 64px;
+        margin-bottom: 64px;
+    }
+}
+
 .overlay.show {
-    transform: translateY(0);
+    transform: translateY(40px);
     opacity: 1;
 }
 
 .confetti-game-theme {
     display: var(--confetti);
+
+    >img {
+        width: 100%;
+    }
+}
+
+.overlay-menu-btn {
+    font-size: var(--menu-btn);
+    height: 62px;
+    width: 204px;
+    color: #FFFFFF;
+    background-color: #86E9D633;
+    border: 1px solid #4DD5BC;
+
+    &:hover {
+        cursor: pointer;
+        box-shadow: var(--btn-hover-s);
+        border: var(--btn-hover-b);
+    }
+}
+
+#winner-text-head {
+    font-size: var(--win-head-font-size);
 }
 
 .winner-b {
-  color: var(--win-b);
+    color: var(--win-b);
+    font-size: var(--win-font-size);
 }
 
 .winner-o {
-  color: var(--win-o);
+    color: var(--win-o);
+    font-size: var(--win-font-size);
 }
 
 .draw {
-  color: gray;
+    color: var(--draw-color);
+    font-size: 128px;
 }
 
 .hidden {
     opacity: 0;
     pointer-events: none;
+}
+
+.d-none {
+    display: none;
 }

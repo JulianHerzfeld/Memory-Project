@@ -27,7 +27,9 @@ const endThemes = {
         winColorP2: "winner-o",
         winColorD: "draw",
         winnerIconP1: "public/assets/img/code-theme-img/code-theme-blue-win.svg",
-        winnerIconP2: "public/assets/img/code-theme-img/code-theme-orange-win.svg"
+        winnerIconP2: "public/assets/img/code-theme-img/code-theme-orange-win.svg",
+        draw: "public/assets/img/code-theme-img/draw_code.svg",
+        btnText: "Back to Start"
     },
     game: {
         header: "public/assets/img/game-theme-img/game-theme-game-over.svg",
@@ -39,7 +41,9 @@ const endThemes = {
         winColorP2: "winner-b",
         winColorD: "draw",
         winnerIconP1: "public/assets/img/game-theme-img/game-theme-trophy.svg",
-        winnerIconP2: "public/assets/img/game-theme-img/game-theme-trophy.svg"
+        winnerIconP2: "public/assets/img/game-theme-img/game-theme-trophy.svg",
+        draw: "public/assets/img/game-theme-img/draw_game.svg",
+        btnText: "Home"
     },
     food: {
         header: "public/assets/img/food-theme-img/food-theme-game-over.svg",
@@ -51,7 +55,9 @@ const endThemes = {
         winColorP2: "winner-b",
         winColorD: "draw",
         winnerIconP1: "public/assets/img/food-theme-img/food-theme-orange-win.svg",
-        winnerIconP2: "public/assets/img/food-theme-img/food-theme-blue-win.svg"
+        winnerIconP2: "public/assets/img/food-theme-img/food-theme-blue-win.svg",
+        draw: "public/assets/img/food-theme-img/draw_food.svg",
+        btnText: "Home"
     }
 } as const;
 
@@ -69,9 +75,13 @@ if (score1El && score2El) {
 
 const overlay = document.getElementById("game-over-overlay")!;
 const winnerText = document.getElementById("winner-text")!;
+const winnerTextHead = document.getElementById("winner-text-head")!;
+const backToStartBtn = document.getElementById("back-to-menu")!;
+const confetti = document.getElementById("confetti-game-theme")!;
 
 let text = "";
 let cssClass = "";
+let btnText = "";
 
 
 if (score1 > score2) {
@@ -83,15 +93,20 @@ if (score1 > score2) {
     cssClass = endThemes[theme].winColorP2;
     winnerIcon.src = endThemes[theme].winnerIconP2;
 } else {
-    text = "Draw";
+    text = "DRAW";
     cssClass = endThemes[theme].winColorD;
+    winnerIcon.src = endThemes[theme].draw;
+    winnerTextHead.textContent = "It's a";
+    confetti.classList.add("d-none");
 }
 
 
 setTimeout(() => {
+    btnText = endThemes[theme].btnText;
     winnerText.textContent = text;
     winnerText.classList.remove("winner-b", "winner-o", "draw");
     winnerText.classList.add(cssClass);
+    backToStartBtn.textContent = btnText;
     overlay.classList.remove("hidden");
     overlay.classList.add("show");
 }, 2500);

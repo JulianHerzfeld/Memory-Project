@@ -41,7 +41,22 @@ function renderCards() {
     const selectedCards: CardData[] = themes[theme].cards.slice(0, pairsToUse);
     const board = new Board(container, themes[theme].frontImg);
     const game = new Game(container, pairsToUse);
+    setCardContainerSize(boardSize);
     board.init(selectedCards);
+}
+
+
+function setCardContainerSize(boardSize: Number) {
+    let columns = 4;
+    let gap = 16;
+
+    if (boardSize === 24 || boardSize === 36) {
+        columns = 6;
+        gap = 6;
+    }
+
+    container.style.gridTemplateColumns = `repeat(${columns}, var(--card-w))`;
+    container.style.gap = `${gap}px`;
 }
 
 
