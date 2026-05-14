@@ -1,6 +1,12 @@
 import '../styles/style.scss';
 import { Theme } from '../views/game-view';
 
+document.addEventListener('DOMContentLoaded', () => {
+    if (theme === "food") {
+        document.body.classList.add("endscreen");
+    }
+})
+
 const theme = sessionStorage.getItem("theme") as Theme;
 
 if (theme) {
@@ -78,6 +84,7 @@ const winnerText = document.getElementById("winner-text")!;
 const winnerTextHead = document.getElementById("winner-text-head")!;
 const backToStartBtn = document.getElementById("back-to-menu")!;
 const confetti = document.getElementById("confetti-game-theme")!;
+const drawImg = document.getElementById("winner-icon")!;
 
 let text = "";
 let cssClass = "";
@@ -97,6 +104,8 @@ if (score1 > score2) {
     cssClass = endThemes[theme].winColorD;
     winnerIcon.src = endThemes[theme].draw;
     winnerTextHead.textContent = "It's a";
+    winnerTextHead.classList.add("winner-text-draw");
+    drawImg.classList.add("m-t-0");
     confetti.classList.add("d-none");
 }
 

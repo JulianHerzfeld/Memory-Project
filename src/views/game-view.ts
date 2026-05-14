@@ -68,37 +68,46 @@ export const themeAssets: Record<Theme, {
     currentPlayer: string;
     blue: string;
     orange: string;
+    backText: string;
+    quitText: string;
 }> = {
     code: {
         player1: "public/assets/icons/label.svg",
         player2: "public/assets/icons/label (1).svg",
         currentPlayer: "public/assets/icons/label (1).svg",
         blue: "public/assets/icons/label.svg",
-        orange: "public/assets/icons/label (1).svg"
+        orange: "public/assets/icons/label (1).svg",
+        backText: "Back to game",
+        quitText: "Exit game"
     },
     game: {
         player1: "public/assets/icons/chess_pawn.svg",
         player2: "public/assets/icons/chess_pawn (1).svg",
         currentPlayer: "public/assets/icons/chess_pawn.svg",
         blue: "public/assets/icons/chess_pawn (1).svg",
-        orange: "public/assets/icons/chess_pawn.svg"
+        orange: "public/assets/icons/chess_pawn.svg",
+        backText: "No, back to game",
+        quitText: "Yes, quit game"
     },
     food: {
         player1: "public/assets/icons/chess_pawn.svg",
         player2: "public/assets/icons/chess_pawn (1).svg",
         currentPlayer: "public/assets/icons/chess_pawn.svg",
         blue: "public/assets/icons/chess_pawn (1).svg",
-        orange: "public/assets/icons/chess_pawn.svg"
+        orange: "public/assets/icons/chess_pawn.svg",
+        backText: "NO, BACK TO GAME",
+        quitText: "EXIT GAME"
     }
 };
 
 
 function updateThemeAssets(theme: Theme) {
     const assets = themeAssets[theme];
-
     const player1 = document.getElementById("player-1") as HTMLImageElement | null;
     const player2 = document.getElementById("player-2") as HTMLImageElement | null;
     const currentPlayer = document.getElementById("current-player-icon") as HTMLImageElement | null;
+    const backBtnText = document.getElementById("close-btn") as HTMLButtonElement | null;
+    const quitBtnText = document.getElementById("dialog-quit-btn") as HTMLElement | null;
 
     if (player1) player1.src = assets.player1;
     if (player2) player2.src = assets.player2;
@@ -111,11 +120,26 @@ function updateThemeAssets(theme: Theme) {
             currentPlayer.src = assets.player1;
         }
     }
+
+    if (backBtnText) {
+        backBtnText.textContent = assets.backText;
+    }
+    if (quitBtnText) {
+        quitBtnText.textContent = assets.quitText;
+    }
+
 }
 
 
 function getBoardSize(): number {
-    return parseInt(sessionStorage.getItem("board") || "16");
+    const gameHeader = document.getElementById("game-view-header") as HTMLElement;
+    const boardSize = parseInt(sessionStorage.getItem("board") || "16");
+    if (gameHeader) {
+        if (boardSize === 36) {
+            gameHeader.classList.add("game-header-margin-b");
+        }
+    }
+    return boardSize;
 }
 
 

@@ -99,7 +99,6 @@ export class Game {
             setTimeout(() => {
                 window.location.href = "/memory-project/endscreen.html";
             }, 2000);
-
         }
     }
 
