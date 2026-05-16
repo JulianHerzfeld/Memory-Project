@@ -1,10 +1,21 @@
 import type { CardData } from "./card";
 
+/**
+ * Defines a theme configuration for the card game.
+ */
 export type CardTheme = {
+    /** Image used for the front side of all cards in the theme. */
     frontImg: string;
+    /** List of card data entries belonging to the theme. */
     cards: CardData[];
 };
 
+/**
+ * Collection of all available card themes used in the game.
+ *
+ * Each theme defines a card back image and a set of card pairs
+ * (id + image) used for rendering the memory game board.
+ */
 export const themes: Record<string, CardTheme> = {
     code: {
         frontImg: "assets/img/code-theme-img/code-theme-back.svg",

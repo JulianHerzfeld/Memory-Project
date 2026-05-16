@@ -1,18 +1,18 @@
 @use './components/main';
 
 @font-face {
-    font-family: red-rose;
+    font-family: 'red-rose';
     src: url('/assets/fonts/RedRose-VariableFont_wght.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: orbitron;
-    src: url('public/assets/fonts/Orbitron-VariableFont_wght.ttf') format('truetype');
+    font-family: 'orbitron';
+    src: url('/assets/fonts/Orbitron-VariableFont_wght.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: klee-one;
-    src: url('public/assets/fonts/KleeOne-Regular.ttf') format('truetype');
+    font-family: 'klee-one';
+    src: url('/assets/fonts/KleeOne-Regular.ttf') format('truetype');
 }
 
 *{
@@ -21,17 +21,17 @@
 }
 
 body {
-    font-family: red-rose;
+    font-family: 'red-rose';
 }
 
 body[data-theme="code"] {
-    font-family: red-rose;
+    font-family: 'red-rose';
 }
 
 body[data-theme="game"] {
-    font-family: orbitron;
+    font-family: 'orbitron';
 }
 
 body[data-theme="food"] {
-    font-family: klee-one;
+    font-family: 'klee-one';
 }

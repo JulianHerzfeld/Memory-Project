@@ -2,6 +2,12 @@ body {
     background-color: var(--bg);
 }
 
+.content-limit-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .game-header {
     padding-left: 111px;
     padding-right: 111px;
@@ -9,8 +15,8 @@ body {
     margin-bottom: 54px;
     display: flex;
     justify-content: space-between;
-    // height: 62px;
     width: 100%;
+    max-width: 1920px;
 }
 
 .header-content {
@@ -127,6 +133,7 @@ dialog {
     left: 50%;
     transform: translate(-50%, -50%);
     border: none;
+    pointer-events: none;
 
     >div {
 
@@ -188,6 +195,7 @@ dialog {
 
 dialog[open] {
     animation: slideDown 0.3s ease forwards;
+    pointer-events: auto;
 }
 
 dialog.closing {
@@ -218,19 +226,12 @@ dialog.closing {
     }
 }
 
-// .card-content-wrapper {
-//     width: 100%;
-//     display: flex;
-//     justify-content: center;
-// }
-
 #card-content {
     display: grid;
     justify-content: center;
 }
 
 .card {
-    // height: 120px;
     aspect-ratio: var(--aspect);
     border-radius: var(--border-r, 0);
 
